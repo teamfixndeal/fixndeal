@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+
+<title>title</title>
+</head>
+<body>
+<h1>Web View Demo</h1>
+<br>
+
+<form method="post" action="test.php" enctype="multipart/form-data">
+	<input accept="image/*;capture=camera" name="file" type="file" >
+    <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+    <br />
+    File Uri: <label id="lbluri">no file uri</label>
+    <br />
+    <input type="text" id="fpath" name="fpath">
+    File Path: <label id="lblpath">no file path</label>
+    <br />
+    <input type="button" value="Choose Photo" onClick="choosePhoto()" />
+    <input type="submit" value="save">
+</form>
+<hr/>
+<br><br>
+
+
+
+    <script type="text/javascript">
+        function showAndroidToast(toast) {
+            Android.showToast(toast);
+        }
+        function setFilePath(file) {
+            document.getElementById('lblpath').innerHTML = file;
+			document.getElementById('fpath').value = file;
+            Android.showToast(file);
+        }
+        function setFileUri(uri) {
+            document.getElementById('lbluri').innerHTML = uri;
+            Android.showToast(uri);
+        }
+        function choosePhoto() {
+            var file = Android.choosePhoto();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: 
+Disallow: /MsAdmin
+Disallow: /models
+Disallow: /function
+
+Sitemap: http://www.fixndeal.com/sitemap.xml
